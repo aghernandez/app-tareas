@@ -6,13 +6,13 @@
     <form  #myForm action="">
       <div class="form-group">
         <label for="">Titulo</label>
-        <input type="text" class="form-control" aria-describedby="title">
+        <input type="text" class="form-control" aria-describedby="title" name="title" [(ngModel)]="nuevaTarea.title">
       </div>
       <div class="form-group">
         <label for="">Descripción</label>
-        <textarea class="form-control"></textarea>
+        <textarea class="form-control" name="description" [(ngModel)]="nuevaTarea.description"></textarea>
       </div>
-      <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Agregar</button>
+      <button type="submit" class="btn btn-outline-primary btn-lg btn-block" (click)="addTarea()">Agregar</button>
     </form>
   </div>
 </div>
