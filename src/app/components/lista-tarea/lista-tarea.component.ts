@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Tarea } from '../../models/tarea';
+import { TareaService } from '../../services/tarea.service';
 
 @Component({
   selector: 'app-lista-tarea',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaTareaComponent implements OnInit {
 
-  constructor() { }
+  miTarea: Tarea[];
+
+  constructor(private listService : TareaService) { }
 
   ngOnInit(): void {
+    this.miTarea = this.listService.getTareas();
+    console.log("Mis tareas:", this.miTarea);
   }
 
 }

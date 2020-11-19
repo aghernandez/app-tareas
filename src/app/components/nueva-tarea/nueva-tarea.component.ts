@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TareaService } from '../../services/tarea.service';
 
 @Component({
   selector: 'app-nueva-tarea',
@@ -14,13 +15,20 @@ export class NuevaTareaComponent implements OnInit {
     description: ''
   }
 
-  constructor() { }
+  constructor(private listService: TareaService) { }
 
   ngOnInit(): void {
   }
 
   addTarea(){
-    console.log("Se a envaido la data");
+    console.log("Se a envaido la data", this.nuevaTarea);
+    this.listService .addTarea(this.nuevaTarea)
+    this.nId ++;
+    this.nuevaTarea = {
+      id:0,
+      title: '',
+      description: ''
+    }
   }
 
 }
