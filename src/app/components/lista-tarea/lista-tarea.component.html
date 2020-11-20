@@ -2,11 +2,11 @@
   <h3 class="ml-3">Mis tareas</h3>
   <div class="col-md-12">
     <div class="row">
-      <div class="col-md-4 mt-4">
+      <div class="col-md-4 mt-4" *ngFor="let tarea of miTarea">
         <div class="card">
           <div class="card-body">
-            <h5>Tarea 1</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores laborum fuga vitae impedit libero aut ducimus repellat molestiae voluptatum, a at veritatis quo earum. Nesciunt doloremque sequi quia repellendus officia.</p>
+            <h5> {{tarea.title}}</h5>
+            <p class="card-text">{{tarea.description}}</p>
             <hr>
             <div class="row justify-content-between container">
               <div class="col-md-6">
